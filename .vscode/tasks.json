@@ -1,28 +1,28 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=733558
-	// for the documentation about the tasks.json format
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Build EasyBuggy",
-			"type": "shell",
-			"command": "mvn package",
-			"problemMatcher": []
-		},
-		{
-			"label": "Run EasyBuggy on Tomcat",
-			"command": "${command:tomcat:war.debug}",
-			"problemMatcher": []
-		},
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build EasyBuggy",
+            "type": "shell",
+            "command": "mvn package",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run EasyBuggy on Tomcat",
+            "command": "${command:tomcat:war.debug}",
+            "problemMatcher": []
+        },
         {
             "label": "Build and Run EasyBuggy",
-			"command": "${command:tomcat:war.debug}",
+            "command": "${command:tomcat:war.debug}",
             "dependsOn": "Build EasyBuggy",
-			"problemMatcher": []
+            "problemMatcher": []
         },
-		{
-			"label": "Stop Tomcat",
-			"command": "${command:tomcat.server.stop}"
-		}
-	]
+        {
+            "label": "Stop Tomcat",
+            "command": "${command:tomcat.server.stop}"
+        }
+    ]
 }
