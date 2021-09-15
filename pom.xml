@@ -146,6 +146,7 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
+						<?m2e execute onConfiguration?>
 						<id>create-empty-directory-and-english-properties</id>
 						<phase>process-classes</phase>
 						<goals>
