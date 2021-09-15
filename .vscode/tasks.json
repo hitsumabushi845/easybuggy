@@ -4,26 +4,25 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "run",
+			"label": "Build EasyBuggy",
 			"type": "shell",
-			"command": "mvn clean install exec:exec",
-			"isBackground": true,
-			"problemMatcher": {
-				"owner": "custom",
-				"pattern": {
-					"regexp": "^[ERROR].*$"
-				},
-				"background": {
-					"activeOnStart": true,
-					"beginsPattern": ".*[INFO] Scanning for projects.*",
-					"endsPattern": ".*INFO: Starting ProtocolHandler.*"
-				}
-			}
+			"command": "mvn package",
+			"problemMatcher": []
 		},
 		{
-			"label": "stop",
-			"type": "shell",
-			"command": "${command:workbench.action.terminal.kill}"
+			"label": "Run EasyBuggy on Tomcat",
+			"command": "${command:tomcat:war.debug}",
+			"problemMatcher": []
+		},
+        {
+            "label": "Build and Run EasyBuggy",
+			"command": "${command:tomcat:war.debug}",
+            "dependsOn": "Build EasyBuggy",
+			"problemMatcher": []
+        },
+		{
+			"label": "Stop Tomcat",
+			"command": "${command:tomcat.server.stop}"
 		}
 	]
 }
